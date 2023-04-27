@@ -3,14 +3,17 @@ package steps;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
+import org.junit.Test;
 import pages.HomePage;
 import pages.ResultadoBuscaPage;
 import runner.Driver;
 
-public class BuscaSteps extends Driver {
+public class BuscarSteps extends Driver {
 
     HomePage homePage = new HomePage();
     ResultadoBuscaPage resultadoBuscaPage = new ResultadoBuscaPage();
+
+    @Test
 
     @Dado("^que eu estou na tela de buca$")
     public void que_eu_estou_na_tela_de_buca() throws Throwable {
@@ -35,11 +38,6 @@ public class BuscaSteps extends Driver {
     @Então("^visualizo que um único artigo foi retornado de acordo com o \"([^\"]*)\"$")
     public void visualizo_que_um_único_artigo_foi_retornado_de_acordo_com_o(String termoDaBusca) throws Throwable {
         resultadoBuscaPage.verificarTermoArtigo(termoDaBusca);
-    }
-
-    @Quando("^realizo a busca informando um \"([^\"]*)\" nos artigos$")
-    public void realizo_a_busca_informando_um_nos_artigos(String termoDaBusca) throws Throwable {
-        homePage.fazerBusca(termoDaBusca);
     }
 
     @Então("^visualizo o retorno da busca sem resultados$")

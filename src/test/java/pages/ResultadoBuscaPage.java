@@ -3,6 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.Driver;
+import support.Utils;
 
 public class ResultadoBuscaPage  extends Driver {
 
@@ -18,11 +19,13 @@ public class ResultadoBuscaPage  extends Driver {
     public void verificarTermoArtigo(String termoDaBusca){
         String result = getDriver().findElement(artigo).getText();
         Assert.assertTrue(result.contains(termoDaBusca));
+        Utils.takesScreenShot();
     }
 
     public void verificarResultadoVazio(){
         String result = getDriver().findElement(tituloPagina).getText();
         Assert.assertEquals("Nenhum resultado", result);
+        Utils.takesScreenShot();
     }
 
 }

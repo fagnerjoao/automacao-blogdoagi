@@ -29,7 +29,7 @@ Para eu m einformar mais sobre o AgiBank
 
   @busca @termo-inexistente
   Esquema do Cenário: Buscar utilizando termo inexistente
-    Quando realizo a busca informando um "<termo-inexistente>" nos artigos
+     Quando realizo a busca informando um "<termo-inexistente>"
     Então visualizo o retorno da busca sem resultados
     Exemplos:
       |termo-inexistente|

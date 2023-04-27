@@ -12,6 +12,7 @@ target/
 *.log
 *.html
 *.json
+*.png
 
 # Arquivos temporários
 *.tmp

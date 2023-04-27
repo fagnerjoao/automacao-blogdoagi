@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "json: target/reports/cucumberReport.json", "html: target/reports/cucumberReport.html"},
         features = "src/test/resources/features",
-        tags = {"@termo-inexistente"},
+        tags = {"@busca"},
         glue = {"steps"}
 )
 

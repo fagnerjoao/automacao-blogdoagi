@@ -16,7 +16,7 @@ Este é um projeto de testes automatizados utilizando Java, Selenium, JUnit e Cu
     Clone o repositório para a sua máquina local
     Abra o projeto em sua IDE preferida (ex: IntelliJ, Eclipse). Recomendo o Intellij
     Baixe as dependências do Maven de acordo com o que está no arquivo POM do projeto
-    Certifique-se de que o ChromeDriver/FirefoxDriver está instalado corretamente e configurado no PATH do seu sistema operacional
+    Certifique-se de que o ChromeDriver/FirefoxDriver está instalado corretamente (de acordo com a versão do browser) e configurado no PATH do seu sistema operacional
 
 # Execução
 

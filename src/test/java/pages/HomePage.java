@@ -22,12 +22,21 @@ public class HomePage extends Driver {
         Utils.waitElementBePresent(btnBuscar, 20);
     }
 
-    public void fazerBusca(String titulo){
+    public void fazerBusca(String termoDaBusca){
         getDriver().findElement(btnBuscar).click();
-        getDriver().findElement(txtBuscar).clear();
-        getDriver().findElement(txtBuscar).click();
-        //getDriver().findElement(txtBuscar).sendKeys("Agibank lança programa interno de diversidade e inclusão");
-        getDriver().findElement(txtBuscar).sendKeys(titulo);
-        getDriver().findElement(btnPesquisar).click();
+        String valorCampoBuscar = getDriver().findElement(txtBuscar).getAttribute("value");
+
+        if (valorCampoBuscar != null) {
+            getDriver().findElement(txtBuscar).click();
+            getDriver().findElement(txtBuscar).clear();
+            getDriver().findElement(txtBuscar).sendKeys(termoDaBusca);
+            getDriver().findElement(btnPesquisar).click();
+        } else {
+            getDriver().findElement(txtBuscar).click();
+            getDriver().findElement(txtBuscar).sendKeys(termoDaBusca);
+            getDriver().findElement(btnPesquisar).click();
+
+        }
+
     }
 }

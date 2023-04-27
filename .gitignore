@@ -10,6 +10,8 @@ target/
 
 # Arquivos de log
 *.log
+*.html
+*.json
 
 # Arquivos temporários
 *.tmp
@@ -17,3 +19,4 @@ target/
 # Arquivos do sistema
 .DS_Store
 Thumbs.db
+*.exe

@@ -18,33 +18,33 @@ public class BuscaSteps extends Driver {
     }
 
     @Quando("^realizo a busca pelo \"([^\"]*)\" do artigo$")
-    public void realizo_a_busca_pelo_título_do_artigo(String titulo) throws Throwable {
-        homePage.fazerBusca(titulo);
+    public void realizo_a_busca_pelo_título_do_artigo(String termoDaBusca) throws Throwable {
+        homePage.fazerBusca(termoDaBusca);
     }
 
     @Então("^visualizo o artigo retornado de acordo com o \"([^\"]*)\" informado$")
-    public void visualizo_o_artigo_retornado_de_acordo_com_o_informado(String titulo) throws Throwable {
-       resultadoBuscaPage.verificarResultadoBusca(titulo);
+    public void visualizo_o_artigo_retornado_de_acordo_com_o_informado(String termoDaBusca) throws Throwable {
+       resultadoBuscaPage.verificarTitulo(termoDaBusca);
     }
 
-    @Quando("^realizo a busca informando um termo expecifíco em um artigo$")
-    public void realizo_a_busca_informando_um_termo_expecifíco_em_um_artigo() throws Throwable {
-
+    @Quando("^realizo a busca informando um \"([^\"]*)\"$")
+    public void realizo_a_busca_informando_um(String termoDaBusca) throws Throwable {
+        homePage.fazerBusca(termoDaBusca);
     }
 
-    @Então("^visualizo o artigo retornado de acordo com o termo informado$")
-    public void visualizo_o_artigo_retornado_de_acordo_com_o_termo_informado() throws Throwable {
-
+    @Então("^visualizo que um único artigo foi retornado de acordo com o \"([^\"]*)\"$")
+    public void visualizo_que_um_único_artigo_foi_retornado_de_acordo_com_o(String termoDaBusca) throws Throwable {
+        resultadoBuscaPage.verificarTermoArtigo(termoDaBusca);
     }
 
-    @Quando("^realizo a busca informando um termo inexistente nos artigos$")
-    public void realizo_a_busca_informando_um_termo_inexistente_nos_artigos() throws Throwable {
-
+    @Quando("^realizo a busca informando um \"([^\"]*)\" nos artigos$")
+    public void realizo_a_busca_informando_um_nos_artigos(String termoDaBusca) throws Throwable {
+        homePage.fazerBusca(termoDaBusca);
     }
 
     @Então("^visualizo o retorno da busca sem resultados$")
     public void visualizo_o_retorno_da_busca_sem_resultados() throws Throwable {
-
+        resultadoBuscaPage.verificarResultadoVazio();
     }
 
 }
